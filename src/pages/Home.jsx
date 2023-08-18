@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar.jsx"
 import Banner from "../components/Banner.jsx"
 import Category from "../components/Category"
 import TopSeller from "../components/TopSeller"
+import ArtCategory from "../components/Art category"
 import {useGlobalContext} from "../context/Context"
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
 		    <Banner/>
 		    <Category/>
 		    <TopSeller/>
+		    <ArtCategory/>
 		  </section>
 		)
 }

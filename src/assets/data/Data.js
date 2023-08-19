@@ -36,7 +36,7 @@ export const NFT_ITEMS = [
 	  {
 	  	id: 3,
 	  	image: image3,
-	  	name: "Yellow jacket boyt",
+	  	name: "Yellow jacket",
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Music",
@@ -75,7 +75,7 @@ export const NFT_ITEMS = [
 	  },
 	  {
 	  	id: 7,
-	  	image: image7,
+	  	image: image2,
 	  	name: "Franklin Art",
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",

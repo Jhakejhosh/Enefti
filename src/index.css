@@ -14,12 +14,3 @@
 html {
 	scroll-behavior: smooth;
 }
-
-.nft-card {
-	min-width: 100%;
-	display: flex;
-	gap: 2rem;
-	overflow-x: scroll;
-	scroll-snap-type: x;
-	position: relative;
-}

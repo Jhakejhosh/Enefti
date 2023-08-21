@@ -19,7 +19,7 @@ const Navbar = () => {
 			id: 2,
 			link: "/wishlist",
 			icon: <BsBookmark/>,
-			menu: "Bookmark"
+			menu: "Bookmarked"
 		},
 		{
 			id: 3,

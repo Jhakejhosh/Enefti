@@ -31,8 +31,8 @@ const Category = () => {
 		]
 	
 	return (
-		  <div className="px-4 dark:bg-darkBg dark:text-darkText md:px-32">
-		    <h1 className="font-semibold text-lg mb-4">Category</h1>
+		  <div className="px-4 dark:bg-darkBg dark:text-darkText md:px-32 pt-6">
+		    {/**<h1 className="font-semibold text-lg mb-4">Category</h1>**/}
 		    <div className="flex justify-between items-center gap-2 relative">{categories.map(cate => {
 		    	const {id, path, icon, Category} = cate
 		    	return (

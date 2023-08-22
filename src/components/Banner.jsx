@@ -45,8 +45,9 @@ const Banner = () => {
 		      <p className="my-6 text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet. Vel dolor unde in dignissimos dolor et repellendus saepe qui laboriosam quia et doloribus repudiandae qui perspiciatis odit.</p>
 		      <button className="w-full py-3 bg-subColor rounded-md text-darkText font-bold text-sm"><Link to="/market">Explore</Link></button>
 		    </div>
-		    <div className="py-4 md:w-[50%] md:bg-subColor"><AliceCarousel animationType="fadeout" items={imageFadeIn} responsive={responsive} mouseTracking infinite
-		      autoPlayInterval={5000} animationDuration={2000} autoPlay disableDotsControls disableButtonsControls/></div>
+		    {/**<div className="py-4 md:w-[50%] md:bg-subColor"><AliceCarousel animationType="fadeout" items={imageFadeIn} responsive={responsive} mouseTracking infinite
+		      autoPlayInterval={5000} animationDuration={2000} autoPlay disableDotsControls disableButtonsControls/>
+		   </div>**/}
 		  </div>
 		)
 }

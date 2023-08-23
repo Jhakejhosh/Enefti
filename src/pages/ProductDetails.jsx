@@ -3,6 +3,7 @@ import {NFT_ITEMS} from "../assets/data/Data"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import NftProductBody from "../components/NftProductBody"
+import SimilarNft from "../components/SimilarNft"
 import {useGlobalContext} from "../context/Context"
 
 
@@ -12,10 +13,17 @@ const ProductDetails = () => {
 	const {id} = useParams();
 	const nftProductId = NFT_ITEMS.find(item => item.id == id);
 	
+	//variable that list out objects in NFT_ITEMS with the same category
+	const sameNftCategory = NFT_ITEMS.filter(product => product.category === nftProductId.category);
+	
+	//variable that remove nft product from other listed products with similar category
+	const similarNftProduct = sameNftCategory.filter(product => product.id !== nftProductId.id)
+	
 	return (
 		  <section className={themeMode ? "dark" : ""}>
 		    <Navbar/>
 		    <NftProductBody nftProductId={nftProductId}/>
+		    <SimilarNft similarNftProduct={similarNftProduct}/>
 		    <Footer/>
 		  </section>
 		)

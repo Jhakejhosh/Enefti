@@ -10,6 +10,11 @@ import image9 from "../images/3d-rendering-holographic-layering.jpg"
 import image10 from "../images/20113018_Kerfin7_NEA_2473.jpg"
 import image11 from "../images/22033840_Kerfin7_NEA_2552.jpg"
 import image12 from "../images/popular5.png"
+import profile1 from "../images/clientIMG02-768x768.jpg"
+import profile2 from "../images/clientIMG03-768x768.jpg"
+import profile3 from "../images/clientIMG01-768x768.jpg"
+import profile4 from "../images/popular5.png"
+
 
 
 export const NFT_ITEMS = [
@@ -17,6 +22,7 @@ export const NFT_ITEMS = [
 	  	id: 1,
 	  	image: image1,
 	  	name: "Franklin Art",
+	  	creator_profile: profile1,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Art",
@@ -27,6 +33,7 @@ export const NFT_ITEMS = [
 	  	id: 2,
 	  	image: image4,
 	  	name: "3d hand art",
+	  	creator_profile: profile2,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Art",
@@ -37,6 +44,7 @@ export const NFT_ITEMS = [
 	  	id: 3,
 	  	image: image3,
 	  	name: "Yellow jacket",
+	  	creator_profile: profile3,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Music",
@@ -47,6 +55,7 @@ export const NFT_ITEMS = [
 	  	id: 4,
 	  	image: image5,
 	  	name: "Portrait collage",
+	  	creator_profile: profile4,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Art",
@@ -57,6 +66,7 @@ export const NFT_ITEMS = [
 	  	id: 5,
 	  	image: image6,
 	  	name: "Monkey",
+	  	creator_profile: profile1,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Music",
@@ -67,6 +77,7 @@ export const NFT_ITEMS = [
 	  	id: 6,
 	  	image: image7,
 	  	name: "Franklin Art",
+	  	creator_profile: profile2,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Sport",
@@ -77,6 +88,7 @@ export const NFT_ITEMS = [
 	  	id: 7,
 	  	image: image2,
 	  	name: "Franklin Art",
+	  	creator_profile: profile3,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Sport",
@@ -87,6 +99,7 @@ export const NFT_ITEMS = [
 	  	id: 8,
 	  	image: image8,
 	  	name: "Franklin Art",
+	  	creator_profile: profile4,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Game",
@@ -97,6 +110,7 @@ export const NFT_ITEMS = [
 	  	id: 9,
 	  	image: image9,
 	  	name: "Franklin Art",
+	  	creator_profile: profile1,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Game",
@@ -107,6 +121,7 @@ export const NFT_ITEMS = [
 	  	id: 10,
 	  	image: image10,
 	  	name: "Franklin Art",
+	  	creator_profile: profile2,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Game",
@@ -117,6 +132,7 @@ export const NFT_ITEMS = [
 	  	id: 11,
 	  	image: image11,
 	  	name: "Franklin Art",
+	  	creator_profile: profile3,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Sport",
@@ -127,6 +143,7 @@ export const NFT_ITEMS = [
 	  	id: 12,
 	  	image: image12,
 	  	name: "Franklin Art",
+	  	creator_profile: profile4,
 	  	high_bid: "0.29",
 	  	low_bid: "0.12",
 	  	category: "Music",

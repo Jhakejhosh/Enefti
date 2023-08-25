@@ -18,10 +18,16 @@ const Home = () => {
 		    <Category/>
 		    <TopSeller/>
 		    <Suspense fallback={<div>Loading...</div>}>
-		    <NftCategories itemCategory="Art" path="art" title="Art Collections"/>
-		    <NftCategories itemCategory="Music" path="music" title="Music Collections"/>
-		    <NftCategories itemCategory="Sport" path="sport" title="Sport Collections"/>
-		    <NftCategories itemCategory="Game" path="game" title="Game Collections"/>
+		      <NftCategories itemCategory="Art" path="art" title="Trending 🔥"/>
+		    </Suspense>
+		    <Suspense fallback={<div>Loading...</div>}>
+		      <NftCategories itemCategory="Music" path="music" title="Best Sales 🚀"/>
+		    </Suspense>
+		    <Suspense fallback={<div>Loading...</div>}>
+		      <NftCategories itemCategory="Sport" path="sport" title="Newly Created 🤑"/>
+		    </Suspense>
+		    <Suspense fallback={<div>Loading...</div>}>
+		      <NftCategories itemCategory="Game" path="game" title="Discount 👾"/>
 		    </Suspense>
 		    <Footer/>
 		  </section>

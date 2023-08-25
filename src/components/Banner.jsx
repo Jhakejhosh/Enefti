@@ -28,8 +28,8 @@ const Banner = () => {
 
 	
 	return (
-		  <div className="px-4 pt-28 dark:bg-darkBg md:flex justify-between items-center w-full md:px-32 md:pt-24">
-		    <div className="dark:text-darkText text-center md:text-left md:w-full md:mr-4">
+		  <div className="px-4 pt-28 dark:bg-darkBg md:flex justify-center items-center w-full md:px-32 md:pt-24">
+		    <div className="dark:text-darkText text-center md:w-[50%]">
 		      <h1 className="text-[28px] font-bold font-[Poppins]">Get access to the free space that allows you to create and save</h1>
           <span className="text-subColor text-[28px] font-bold font-[Poppins]">
           <Typewriter

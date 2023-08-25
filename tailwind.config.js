@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
     	colors: {
-    		mainColor: '#ff3300',
-    		subColor: '#660066',
+    		mainColor: '#ff0066',
+    		subColor: '#00cccc',
     		darkBg: "#000000",
     		darkText: "#ffffff",
     		darkBg2: "#1a1a1a"

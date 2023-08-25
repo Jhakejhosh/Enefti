@@ -11,8 +11,8 @@ const NftCategories = ({itemCategory, title, path}) => {
 	
 	return (
 		  <section id={path} className="w-full relative px-4 md:px-32 dark:bg-darkBg dark:text-darkText">
-		    <h1 className="font-semibold text-md">{title}</h1>
-		    <div className="snap-x overflow-scroll flex w-full gap-4 py-4">{
+		    <h1 className="font-semibold text-md md:text-center">{title}</h1>
+		    <div className="snap-x overflow-scroll flex w-full gap-4 py-4 md:justify-center">{
 		    	 CATEGORY_NFTS.map(nft => { 
 		    		const {id, image, name, high_bid} = nft;
 		    		return (

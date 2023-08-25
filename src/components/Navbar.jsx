@@ -1,5 +1,5 @@
 import {useState} from "react"
-import logo from "../assets/images/pngwing.com (13).png"
+import logo from "../assets/images/pngwing.com (12).png"
 import profile from "../assets/images/pngwing.com (6).png"
 import {BiSolidSun, BiSolidMoon} from "react-icons/bi"
 import {BsPencil, BsPerson, BsBookmark} from "react-icons/bs"
@@ -19,7 +19,7 @@ const Navbar = () => {
 			id: 2,
 			link: "/wishlist",
 			icon: <BsBookmark/>,
-			menu: "Bookmarked"
+			menu: "Saved NFTs"
 		},
 		{
 			id: 3,
@@ -39,10 +39,10 @@ const Navbar = () => {
 	
 	
 	return (
-		  <nav className="w-full flex justify-between items-center bg-darkText px-4 py-2 fixed shadow-md dark:bg-darkBg z-40 md:px-32 dark:border-b-2 dark:border-b-gray-800">
+		  <nav className="w-full flex justify-between items-center bg-darkText px-4 py-2 fixed dark:bg-darkBg z-40 md:px-32">
 		    <Link to="/"><div className="flex justify-center items-center">
-		      <div className="w-10 border-2 rounded-full flex justify-center items-center border-subColor overflow-hidden"><img src={logo} alt="logo" className="w-full bg-gray-50"/></div>
-		      <h1 className="text-subColor font-semibold dark:text-darkText">ENEFTI<strong className="text-xlg text-mainColor font-bold">.</strong></h1>
+		      <div className="w-10 flex justify-center items-center border-subColor overflow-hidden"><img src={logo} alt="logo" className="w-full"/></div>
+		      <h1 className="text-subColor font-bold">EN<span className="text-mainColor">EF</span>TI<strong className="text-xlg text-mainColor font-bold">.</strong></h1>
 		    </div></Link>
 		    {/***toggle button for light and dark mode**/}
 		    <button className="text-2xl dark:text-darkText" onClick={themeModeToggle}>{themeMode ? <BiSolidSun/> : <BiSolidMoon/>}</button>

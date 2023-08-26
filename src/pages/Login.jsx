@@ -8,7 +8,7 @@ const Login = () => {
 		      <div className="w-10 flex justify-center items-center border-subColor overflow-hidden"><img src={logo} alt="logo" className="w-full"/></div>
 		      <h1 className="text-subColor font-bold">EN<span className="text-mainColor">EF</span>TI<strong className="text-xlg text-mainColor font-bold">.</strong></h1>
 		    </div></Link>
-		    <div className="text-center flex flex-col justify-center items-center px-4">
+		    <div className="text-center flex flex-col justify-center items-center px-4 py-10">
 		      <h1 className="text-xl font-bold mb-2">Welcome back!</h1>
 		      <p className="text-gray-400 font-medium px-8">Please enter your email and password to continue</p>
 		      <form className="my-4 w-full md:w-[50%]">

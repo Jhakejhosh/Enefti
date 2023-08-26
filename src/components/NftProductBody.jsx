@@ -10,7 +10,7 @@ const NftProductBody = ({nftProductId}) => {
 		  <div className="px-4 dark:bg-darkBg dark:text-darkText">
 		    <div className="w-full relative pt-24">
 		      <div className="w-full h-[400px] md:h-[60vh] absolute rounded-md dark:bg-gradient-to-b dark:from-transparent dark:to-darkBg bg-gradient-to-b from-transparent to-darkText"></div>
-		      <img src={image} alt={name} loading="lazy" className="rounded-md w-full h-[400px] object-cover md:h-[60vh]"/>
+		      <img src={image} alt={name} loading="lazy" className="rounded-md w-full h-[400px] object-cover md:h-[60vh] md:object-cover"/>
 		      <div className="absolute bottom-2 px-2 md:text-center md:w-full">
 		      <p className="font-bold mb-2 text-xl">{name}</p>
 		      <span className="flex items-center justify-center">

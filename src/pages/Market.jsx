@@ -11,15 +11,16 @@ const Market = () => {
 	
 	const {themeMode} = useGlobalContext();
 	const [showOptions, setShowOptions] = useState(false)
+	const [products, setProducts] = useState(NFT_ITEMS)
 
 	
 	return (
 		  <section className={themeMode ? "dark" : ""}>
 		    <Navbar/>
 		    <MarketBanner/>
-		    <SearchAndFilter setShowOptions={setShowOptions} showOptions={showOptions}/>
+		    <SearchAndFilter setShowOptions={setShowOptions} showOptions={showOptions} products={products} setProducts={setProducts}/>
 		    <Suspense fallback={<div>Loading...</div>}>
-		      <AllNftProduct product={NFT_ITEMS}/>
+		      {products.length === 0 ? <p className="text-center py-4">NFT not found</p> : <AllNftProduct product={products}/>}
 		    </Suspense>
 		    <Footer/>
 		  </section>

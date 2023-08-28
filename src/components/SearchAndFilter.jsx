@@ -24,17 +24,19 @@ const SearchAndFilter = ({showOptions, setShowOptions, products, setProducts}) =
 	
 	const sortedProduct = option => {
 		if (option === "Alphabet (A-Z)") {
-			const alphabeticalOrder = NFT_ITEMS.sort((a, b) => {
+			const alphabeticalOrder = products.sort((a, b) => {
 				if (a.name > b.name) return 1
 				return -1
 			})
+		  setShowOptions(false)
 			return alphabeticalOrder
 		}
 		if (option === "Price") {
-			const priceOrder = NFT_ITEMS.sort((a, b) => a.high_bid > b.high_bid)
+			const priceOrder = products.sort((a, b) => {return a.high_bid - b.high_bid})
+	  	setShowOptions(false)
 			return priceOrder
 		}
-		setShowOptions(false)
+
 	}
 	
 	

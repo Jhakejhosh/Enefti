@@ -24,10 +24,10 @@ const Home = () => {
 		      <NftCategories itemCategory="Music" path="music" title="Best Sales 🚀"/>
 		    </Suspense>
 		    <Suspense fallback={<div>Loading...</div>}>
-		      <NftCategories itemCategory="Sport" path="sport" title="Newly Created 🤑"/>
+		      <NftCategories itemCategory="Sport" path="sport" title="Newly Created 💡"/>
 		    </Suspense>
 		    <Suspense fallback={<div>Loading...</div>}>
-		      <NftCategories itemCategory="Game" path="game" title="Discount 👾"/>
+		      <NftCategories itemCategory="Game" path="game" title="Discount 🤑"/>
 		    </Suspense>
 		    <Footer/>
 		  </section>

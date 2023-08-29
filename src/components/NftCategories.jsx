@@ -4,16 +4,15 @@ import {BsBookmark, BsBookmarkFill} from "react-icons/bs"
 import {Link} from "react-router-dom"
 
 
-const NftCategories = ({itemCategory, title, path}) => {
+const TrendingNft = () => {
 	
-	//variable that filters out all the object with the category "ART"
-	const CATEGORY_NFTS = NFT_ITEMS.filter(item => item.category===itemCategory)
+	const trending = NFT_ITEMS.slice(0,3);
 	
 	return (
-		  <section id={path} className="w-full relative px-4 md:px-32 dark:bg-darkBg dark:text-darkText">
-		    <h1 className="font-semibold text-md md:text-center">{title}</h1>
+		  <section className="w-full relative px-4 md:px-32 dark:bg-darkBg dark:text-darkText">
+		    <h1 className="font-semibold text-md md:text-center">Trending 🔥</h1>
 		    <div className="snap-x overflow-scroll flex w-full gap-4 py-4 md:justify-center">{
-		    	 CATEGORY_NFTS.map(nft => { 
+		    	 trending.map(nft => { 
 		    		const {id, image, name, high_bid} = nft;
 		    		return (
 		    			  <Link to={`/product/${id}`} key={id}><div className="w-[130px] relative flex-shrink-0 snap-end overflow-hidden rounded-md shadow-md">
@@ -31,4 +30,4 @@ const NftCategories = ({itemCategory, title, path}) => {
 		)
 }
 
-export default NftCategories
+export default TrendingNft

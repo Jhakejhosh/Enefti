@@ -4,7 +4,8 @@ import Category from "../components/Category"
 import TopSeller from "../components/TopSeller"
 import Footer from "../components/Footer"
 import React, {lazy, Suspense} from "react";
-const NftCategories = lazy(() => import("../utils/NftCategories.jsx"));
+const TrendingNft = lazy(() => import("../components/NftCategories.jsx"));
+const PopularNft = lazy(() => import("../components/PopularNft.jsx"));
 import {useGlobalContext} from "../context/Context"
 
 const Home = () => {
@@ -18,16 +19,10 @@ const Home = () => {
 		    <Category/>
 		    <TopSeller/>
 		    <Suspense fallback={<div>Loading...</div>}>
-		      <NftCategories itemCategory="Art" path="art" title="Trending 🔥"/>
+		      <TrendingNft/>
 		    </Suspense>
 		    <Suspense fallback={<div>Loading...</div>}>
-		      <NftCategories itemCategory="Music" path="music" title="Best Sales 🚀"/>
-		    </Suspense>
-		    <Suspense fallback={<div>Loading...</div>}>
-		      <NftCategories itemCategory="Sport" path="sport" title="Newly Created 💡"/>
-		    </Suspense>
-		    <Suspense fallback={<div>Loading...</div>}>
-		      <NftCategories itemCategory="Game" path="game" title="Discount 🤑"/>
+		      <PopularNft/>
 		    </Suspense>
 		    <Footer/>
 		  </section>

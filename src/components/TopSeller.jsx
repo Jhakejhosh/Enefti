@@ -33,8 +33,8 @@ const TopSeller = () => {
   	]
 	
 	return (
-		  <div className="px-4 py-6 dark:text-darkText dark:bg-darkBg md:px-32">
-		    <h1 className="font-semibold text-lg mb-4">Top sellers</h1>
+		  <div className="px-4 py-8 dark:text-darkText dark:bg-darkBg md:px-32">
+		    <h1 className="font-semibold text-md mb-4">Top sellers</h1>
 		    <div className="grid grid-cols-2 gap-4 md:flex justify-between items-center">{sellers.map(seller => {
 		    	const {id, image, name, bid} = seller;
 		    	return (

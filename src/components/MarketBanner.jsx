@@ -8,7 +8,7 @@ const MarketBanner = () => {
 		      <div className="w-full md:h-[60vh] absolute rounded-md dark:bg-gradient-to-b dark:from-transparent dark:to-darkBg h-auto"></div>
 		      <img src={banner} alt="banner" loading="lazy" className="rounded-md w-full  object-cover md:h-[60vh]"/>
 		      <div className="absolute bottom-4 px-2 text-center w-full">
-		        <p className="font-bold mb-2 text-xl">Market</p>
+		        <p className="font-bold mb-2 text-xl">NFT Product</p>
 		        <p className="text-gray-200">All products are listed out here!🚀</p>
 		      </div>
 		    </div>

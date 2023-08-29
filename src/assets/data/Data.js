@@ -32,7 +32,7 @@ export const NFT_ITEMS = [
 	  {
 	  	id: 2,
 	  	image: image4,
-	  	name: " Volley 3d hand",
+	  	name: "Volley 3d hand",
 	  	creator_profile: profile2,
 	  	high_bid: "0.234",
 	  	low_bid: "0.122",

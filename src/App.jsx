@@ -6,6 +6,7 @@ const ProductDetails = lazy(() => import("./pages/ProductDetails.jsx"))
 const Login = lazy(() => import("./pages/Login.jsx"));
 const Signup = lazy(() => import("./pages/Signup.jsx"));
 const Market = lazy(() => import("./pages/Market.jsx"));
+const CreateNft = lazy(() => import("./pages/CreateNFT.jsx"));
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/market" element={<Market/>}/>
+        <Route path="/create" element={<CreateNft/>}/>
       </Routes>
       </Suspense>
     </>

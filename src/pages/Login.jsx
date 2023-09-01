@@ -1,9 +1,11 @@
 import {Link} from "react-router-dom"
 import logo from "../assets/images/pngwing.com (12).png"
+import Head from "../utils/Head"
 
 const Login = () => {
 	return (
 		  <div>
+		    <Head title="Log in" description=""/>
 		    <Link to="/"><div className="flex items-center p-4">
 		      <div className="w-10 flex justify-center items-center border-subColor overflow-hidden"><img src={logo} alt="logo" className="w-full"/></div>
 		      <h1 className="text-subColor font-bold">EN<span className="text-mainColor">EF</span>TI<strong className="text-xlg text-mainColor font-bold">.</strong></h1>

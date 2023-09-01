@@ -4,6 +4,7 @@ import {NFT_ITEMS} from "../assets/data/Data"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import NftProductBody from "../components/NftProductBody"
+import Head from "../utils/Head"
 import SimilarNft from "../components/SimilarNft"
 import {useGlobalContext} from "../context/Context"
 
@@ -22,10 +23,11 @@ const ProductDetails = () => {
 	
 	useEffect(() => {
 		window.scrollTo(0,0)
-	}, [sameNftCategory])
+	}, [nftProductId])
 	
 	return (
 		  <section className={themeMode ? "dark" : ""}>
+		    <Head title={nftProductId.name} description=""/>
 		    <Navbar/>
 		    <NftProductBody nftProductId={nftProductId}/>
 		    <SimilarNft similarNftProduct={similarNftProduct}/>

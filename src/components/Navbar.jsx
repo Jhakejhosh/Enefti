@@ -2,7 +2,8 @@ import {useState} from "react"
 import logo from "../assets/images/pngwing.com (12).png"
 import profile from "../assets/images/pngwing.com (6).png"
 import {BiSolidSun, BiSolidMoon} from "react-icons/bi"
-import {BsPencil, BsPerson, BsBookmark} from "react-icons/bs"
+import {AiOutlineLogin, AiOutlineLogout} from "react-icons/ai"
+import {BsPencil, BsPerson} from "react-icons/bs"
 import {Link} from "react-router-dom"
 import {useGlobalContext} from "../context/Context"
 
@@ -17,14 +18,14 @@ const Navbar = () => {
 		},
 		{
 			id: 2,
-			link: "/wishlist",
-			icon: <BsBookmark/>,
-			menu: "Saved NFTs"
+			link: "/profile",
+			icon: <BsPerson/>,
+			menu: "Profile"
 		},
 		{
 			id: 3,
 			link: "/login",
-			icon: <BsPerson/>,
+			icon: <AiOutlineLogin/>,
 			menu: "Log in"
 		}
 		]
@@ -56,7 +57,7 @@ const Navbar = () => {
 		    </div>
 		    
 		    {/**Navmenu logic**/}
-		    {showNavMenu ? (<div className="absolute right-0 top-[100%] bg-darkText shadow-md p-4 z-50 md:right-28">
+		    {showNavMenu ? (<div className="absolute right-0 top-[100%] dark:bg-gray-950 dark:text-darkText shadow-md bg-darkText shadow-md p-4 z-50 md:right-28">
 		      <ul>{menuItems.map(item => {
 		      	const {id, icon, link, menu} = item;
 		      	return (

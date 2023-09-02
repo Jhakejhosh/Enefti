@@ -8,6 +8,8 @@ const Signup = lazy(() => import("./pages/Signup.jsx"));
 const Market = lazy(() => import("./pages/Market.jsx"));
 const CreateNft = lazy(() => import("./pages/CreateNFT.jsx"));
 const Profile = lazy(() => import("./pages/Profile.jsx"));
+const FavoriteNFT = lazy(() => import("./pages/FavoriteNFT.jsx"));
+const CreatedNFT = lazy(() => import("./pages/CreatedNFT.jsx"));
 
 function App() {
 
@@ -21,7 +23,11 @@ function App() {
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/market" element={<Market/>}/>
         <Route path="/create" element={<CreateNft/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile" element={<Profile/>}>
+          <Route index element={<FavoriteNFT/>}/>
+          <Route path="favorites" element={<FavoriteNFT/>}/>
+          <Route path="myNft" element={<CreatedNFT/>}/>
+        </Route>
       </Routes>
       </Suspense>
     </>

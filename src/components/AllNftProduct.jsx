@@ -1,8 +1,14 @@
 import {FaEthereum} from "react-icons/fa"
 import {BsHeart, BsHeartFill} from "react-icons/bs"
+import useFavorite from "../hooks/useFavorite"
+import {useGlobalContext} from "../context/Context"
 import {Link} from "react-router-dom"
 
 const AllNftProduct = ({product}) => {
+	
+	const {removeFavorite, addFavorite, favoriteItems} = useGlobalContext()
+	const {favoriteButton, favoriteSelected} = useFavorite()
+	
 	return (
 		  <div className="dark:bg-darkBg dark:text-darkText p-4 md:px-32">
 		    {product.map((item) => {

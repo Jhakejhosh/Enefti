@@ -3,7 +3,7 @@ import {NFT_ITEMS} from "../assets/data/Data"
 
 const SearchAndFilter = ({showOptions, setShowOptions, products, setProducts}) => {
 	
-	const options = ["Alphabet (A-Z)", "Price"]
+	const options = ["Alphabet (A-Z)", "Lowest-Highest Price"]
 	//Adding "All category" to the array of nft categories
 	const allCategory = ["All category", ...new Set(NFT_ITEMS.map(product => product.category))]
 	
@@ -31,7 +31,7 @@ const SearchAndFilter = ({showOptions, setShowOptions, products, setProducts}) =
 		  setShowOptions(false)
 			return alphabeticalOrder
 		}
-		if (option === "Price") {
+		if (option === "Lowest-Highest Price") {
 			const priceOrder = products.sort((a, b) => {return a.high_bid - b.high_bid})
 	  	setShowOptions(false)
 			return priceOrder

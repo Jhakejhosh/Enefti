@@ -57,7 +57,7 @@ const Navbar = () => {
 		    </div>
 		    
 		    {/**Navmenu logic**/}
-		    {showNavMenu ? (<div className="absolute right-0 top-[100%] dark:bg-gray-950 dark:text-darkText shadow-md bg-darkText shadow-md p-4 z-50 md:right-28">
+		    {showNavMenu ? (<div className="absolute right-0 top-[100%] dark:bg-gray-950 dark:text-darkText shadow-md bg-darkText shadow-lg w-32 dark:shadow-gray-800 p-4 z-50 md:right-28">
 		      <ul>{menuItems.map(item => {
 		      	const {id, icon, link, menu} = item;
 		      	return (

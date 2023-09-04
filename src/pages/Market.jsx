@@ -3,16 +3,14 @@ import Footer from "../components/Footer"
 import MarketBanner from "../components/MarketBanner"
 import Head from "../utils/Head"
 import SearchAndFilter from "../components/SearchAndFilter"
-import {NFT_ITEMS} from "../assets/data/Data"
 import React, {lazy, Suspense, useState} from "react";
 const AllNftProduct = lazy(() => import("../components/AllNftProduct.jsx"));
 import {useGlobalContext} from "../context/Context"
 
 const Market = () => {
 	
-	const {themeMode} = useGlobalContext();
+	const {themeMode, products, setProducts} = useGlobalContext();
 	const [showOptions, setShowOptions] = useState(false)
-	const [products, setProducts] = useState(NFT_ITEMS)
 
 	
 	return (

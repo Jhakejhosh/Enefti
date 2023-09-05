@@ -19,7 +19,7 @@ const AppProvider = ({children}) => {
 	}
 	
 	return (
-		 <AppContext.Provider value={{themeMode, setThemeMode, products, setProducts, addFavorite, removeFavorite}}>{children}</AppContext.Provider>
+		 <AppContext.Provider value={{...state, themeMode, setThemeMode, products, setProducts, addFavorite, removeFavorite}}>{children}</AppContext.Provider>
 		)
 }
 export const useGlobalContext = () => {

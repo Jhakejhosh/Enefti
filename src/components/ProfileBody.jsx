@@ -1,8 +1,11 @@
 import banner from "../assets/images/space.jpg"
 import profile from "../assets/images/clientIMG02-768x768.jpg"
 import {NavLink, Outlet } from "react-router-dom"
+import {useGlobalContext} from "../context/Context"
 
 const ProfileBody = () => {
+	
+	const {favoriteItems} = useGlobalContext()
 	
 	const activeLink = "px-8 py-4 font-semibold rounded-md bg-subColor text-sm text-darkText";
 	const notActiveLink = "px-8 py-4 font-semibold rounded-md bg-transparent text-sm text-subColor"
@@ -23,7 +26,7 @@ const ProfileBody = () => {
 		    <div className="flex justify-between items-center py-4">
 		      <span className="font-semibold text-center">
 		        <p className="text-gray-500 text-sm">Favorite</p>
-		        <p className="dark:text-darkText">0</p>
+		        <p className="dark:text-darkText">{favoriteItems.length}</p>
 		      </span>
 		      <span className="font-semibold text-center">
 		        <p className="text-gray-500 text-sm">NFT created</p>

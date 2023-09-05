@@ -10,11 +10,17 @@ const CreateNft = lazy(() => import("./pages/CreateNFT.jsx"));
 const Profile = lazy(() => import("./pages/Profile.jsx"));
 const FavoriteNFT = lazy(() => import("./pages/FavoriteNFT.jsx"));
 const CreatedNFT = lazy(() => import("./pages/CreatedNFT.jsx"));
+import {useGlobalContext} from "./context/Context"
+import {ToastContainer} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+	
+	const {themeMode} = useGlobalContext()
 
   return (
     <>
+      <ToastContainer theme={!themeMode ? "light" : "dark"}/>
       <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Home/>} exact/>

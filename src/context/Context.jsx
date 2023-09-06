@@ -1,4 +1,4 @@
-import {createContext, useState, useContext, useReducer} from "react"
+import {createContext, useState, useContext, useReducer, useEffect} from "react"
 import {favoriteReducer, favoriteInitialState} from "./FavoriteReducer"
 import {NFT_ITEMS} from "../assets/data/Data"
 
@@ -17,6 +17,9 @@ const AppProvider = ({children}) => {
 	const removeFavorite = (id) => {
 		dispatch({type: "REMOVE_FAVORITE", payload: id})
 	}
+	useEffect(() => {
+		localStorage.setItem("favorite", JSON.stringify(state.favoriteItems))
+	}, [state])
 	
 	return (
 		 <AppContext.Provider value={{...state, themeMode, setThemeMode, products, setProducts, addFavorite, removeFavorite}}>{children}</AppContext.Provider>

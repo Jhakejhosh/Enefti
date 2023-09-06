@@ -30,8 +30,8 @@ function App() {
         <Route path="/market" element={<Market/>}/>
         <Route path="/create" element={<CreateNft/>}/>
         <Route path="/profile" element={<Profile/>}>
-          <Route index element={<FavoriteNFT/>}/>
-          <Route path="favorites" element={<FavoriteNFT/>}/>
+          /**<Route index element={<FavoriteNFT/>}/>**/
+          <Route Index path="favorites" element={<FavoriteNFT/>}/>
           <Route path="myNft" element={<CreatedNFT/>}/>
         </Route>
       </Routes>

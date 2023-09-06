@@ -1,5 +1,6 @@
+const storage = localStorage.getItem("favorite") ? JSON.parse(localStorage.getItem("favorite")):[]
 export const favoriteInitialState = {
-		favoriteItems: []
+		favoriteItems: storage
 	}
 	
 export const favoriteReducer = (state, action) => {

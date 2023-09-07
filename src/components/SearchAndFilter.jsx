@@ -42,7 +42,7 @@ const SearchAndFilter = ({showOptions, setShowOptions, products, setProducts}) =
 	
 	return (
 		  <div className="dark:bg-darkBg dark:text-darkText p-4 relative md:px-32">
-		    <input type="text" placeholder="🔍 Search..." className="border-2 border-gray-400 w-full rounded-md p-2 bg-transparent" onChange={handleSearch}/>
+		    <input type="text" placeholder="🔍 Search..." className="border-2 border-gray-400 w-full rounded-md p-2 bg-transparent outline-subColor" onChange={handleSearch}/>
 		    <div className="flex justify-between items-center my-2">
 		      <button className="flex justify-between items-center bg-subColor p-2 rounded-md text-sm font-semibold" onClick={() => setShowOptions(!showOptions)}>Sort by <BiChevronDown/></button>
 		      <select onChange={handleCategoryFilter} className="p-2 bg-transparent rounded-md outline-none border-2 border-subColor font-bold text-sm">

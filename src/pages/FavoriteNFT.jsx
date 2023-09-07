@@ -1,6 +1,7 @@
 import {useGlobalContext} from "../context/Context"
 import {FaEthereum} from "react-icons/fa"
 import {Link} from "react-router-dom"
+import EmptyProduct from "../utils/EmptyProduct"
 
 const FavoriteNFT = () => {
 	
@@ -8,7 +9,7 @@ const FavoriteNFT = () => {
 	
 	return (
 		  <>
-		    <div className="grid grid-cols-2 w-full gap-4 py-4 md:grid-cols-4">{
+		    {favoriteItems.length === 0 ? (<EmptyProduct empty="You don't have any product saved yet"/>) : (<div className="grid grid-cols-2 w-full gap-4 py-4 md:grid-cols-4">{
 		    	 favoriteItems.map(nft => { 
 		    		const {id, image, name, high_bid} = nft;
 		    		return (
@@ -23,7 +24,7 @@ const FavoriteNFT = () => {
 		    			  </div></Link>
 		    			)
 		    	})
-		    }</div>
+		    }</div>)}
 		  </>
 		)
 }

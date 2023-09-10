@@ -5,7 +5,11 @@ import {BiSolidSun, BiSolidMoon} from "react-icons/bi"
 import {AiOutlineLogin, AiOutlineLogout} from "react-icons/ai"
 import {BsPencil, BsPerson} from "react-icons/bs"
 import {Link} from "react-router-dom"
+import useAuth from "../hooks/useAuth"
+import {signOut} from "firebase/auth"
+import {auth} from "../Firebase/Firebase"
 import {useGlobalContext} from "../context/Context"
+import {toast} from "react-toastify"
 
 const Navbar = () => {
 	
@@ -21,21 +25,28 @@ const Navbar = () => {
 			link: "/profile",
 			icon: <BsPerson/>,
 			menu: "Profile"
-		},
-		{
-			id: 3,
-			link: "/login",
-			icon: <AiOutlineLogin/>,
-			menu: "Log in"
 		}
 		]
 	
 	const {themeMode, setThemeMode} = useGlobalContext();
+	const {currentUser} = useAuth()
 	const [showNavMenu, setShowNavMenu] = useState(false)
+	const [loading, setLoading] = useState(false)
 	
 	//function to execute the themeMode toggling effect
 	const themeModeToggle = () => {
 		setThemeMode(!themeMode);
+	}
+	
+	const logOut = async () => {
+		setLoading(true)
+		try {
+			await signOut(auth)
+			toast.info("Successfully logged out")
+			setLoading(false)
+		} catch (e) {
+			toast.error(e.message)
+		}
 	}
 	
 	
@@ -50,10 +61,10 @@ const Navbar = () => {
 		   
 		    {/**profile picture**/}
 		    <div className="text-center">
-		      <div className="w-12 h-12 border-2 rounded-full flex justify-center items-center border-subColor overflow-hidden" onClick={() => setShowNavMenu(!showNavMenu)}>
-		        <img src={profile} alt="profile" className="w-full" loading="lazy"/>
+		      <div className="w-12 h-12 border-2 rounded-full flex justify-center items-center border-subColor overflow-hidden text-center" onClick={() => setShowNavMenu(!showNavMenu)}>
+		        <img src={currentUser ? currentUser.photoURL : profile} alt="profile" className="w-full" loading="lazy"/>
 		      </div>
-		      <p className="font-bold text-[10px] dark:text-darkText">Hi, guest</p>
+		      <p className="font-bold text-[10px] dark:text-darkText text-center">{currentUser ? `Welcome ${currentUser.displayName}` : "Hi, guest"}</p>
 		    </div>
 		    
 		    {/**Navmenu logic**/}
@@ -61,13 +72,18 @@ const Navbar = () => {
 		      <ul>{menuItems.map(item => {
 		      	const {id, icon, link, menu} = item;
 		      	return (
-		      		  <li key={id} className="mb-4 last:mb-0">
+		      		  <li key={id} className="mb-4">
 		      		    <Link to={link} className="flex items-center text-sm">{icon}
 		      		      <p className="ml-4">{menu}</p>
 		      		    </Link>
 		      		  </li>
 		      		)
-		      })}</ul>
+		      })}
+		      <li className="mb-0">{currentUser ? (
+		      	 <span className="flex items-center text-sm" onClick={logOut}><AiOutlineLogout/><p className="ml-4">Logout</p></span> 
+		      	) : (
+		      	   <Link to="/login" className="flex items-center text-sm"><AiOutlineLogin/><p className="ml-4">Login</p></Link> 
+		      		)}</li></ul>
 		    </div>) : null}
 		  </nav>
 		)

@@ -37,24 +37,24 @@ const Signup = () => {
 		  uploadImage.on((error) => {
 		  	taost.error(error.message)
 		  }, () => {
-		  	getDownloadURL(uploadImage.snapshot.ref).then(async (downloadURL) => {
+		  	getDownloadURL(uploadImage.snapshot.ref).then(async(downloadURL) => {
 		  		//update username and profile image
 		  		await updateProfile(user, {
 		  			displayName: username,
 		  			photoURL: downloadURL
 		  		})
 		  		//storing user data in firebase
-		  		await setDoc(doc(db, "users", user.uid), {
+		  		/**await setDoc(doc(db, "users", user.uid), {
 		  			uid: user.uid,
 		  			displayName: username,
 		  			email,
 		  			photoURL: downloadURL
-		  		})
+		  		})**/
 		  	})
 		  })
 		  
 			
-			toast.success("Account created")
+			toast.success(`Account created ${user.displayName}`)
 			navigate("/login")
 			setLoading(false)
 		} catch (e) {

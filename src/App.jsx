@@ -1,6 +1,7 @@
 import React, {lazy, Suspense} from "react";
 import { Routes, Route } from 'react-router-dom'
 import "./App.css"
+import ProtectedRoute from "./utils/ProtectedRoute"
 const Home = lazy(() => import("./pages/Home.jsx"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails.jsx"))
 const Login = lazy(() => import("./pages/Login.jsx"));
@@ -28,8 +29,8 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/market" element={<Market/>}/>
-        <Route path="/create" element={<CreateNft/>}/>
-        <Route path="/profile" element={<Profile/>}>
+        <Route path="/create" element={<ProtectedRoute><CreateNft/></ProtectedRoute>}/>
+        <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}>
           /**<Route index element={<FavoriteNFT/>}/>**/
           <Route Index path="favorites" element={<FavoriteNFT/>}/>
           <Route path="myNft" element={<CreatedNFT/>}/>

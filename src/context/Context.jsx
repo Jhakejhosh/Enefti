@@ -6,7 +6,7 @@ const AppContext = createContext();
 
 const AppProvider = ({children}) => {
 	
-	const [themeMode, setThemeMode] = useState(false)
+	const [themeMode, setThemeMode] = useState(true)
 	const [products, setProducts] = useState(NFT_ITEMS)
 	
 	//useReducer for favorite products

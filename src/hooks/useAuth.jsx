@@ -3,17 +3,17 @@ import {auth} from "../Firebase/Firebase"
 import {onAuthStateChanged} from "firebase/auth"
 
 const useAuth = () => {
-	const [currentUser, setCurrentUser] = useState({})
+	const [theUser, setTheUser] = useState({})
 	useEffect(() => {
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
-				setCurrentUser(user)
+				setTheUser(user)
 			} else {
-				setCurrentUser(null)
+				setTheUser(null)
 			}
 		})
 	})
-	return {currentUser}
+	return {theUser}
 }
 
 export default useAuth

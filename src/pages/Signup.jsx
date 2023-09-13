@@ -30,26 +30,26 @@ const Signup = () => {
 		  //handling authentication of username and profile picture
 		  
 		  //referencing the profile image
-		  const profileImgRef = ref(storage, `Images/${username}`)
+		  const profileImgRef = ref(storage, `Images/${Date.now()+username}`)
 		  const uploadImage = uploadBytesResumable(profileImgRef, imageFile)
 		  
 		  //uploading image 
 		  uploadImage.on((error) => {
 		  	taost.error(error.message)
 		  }, () => {
-		  	getDownloadURL(uploadImage.snapshot.ref).then(async(downloadURL) => {
+		  	getDownloadURL(uploadImage.snapshot.ref).then(async (downloadURL) => {
 		  		//update username and profile image
 		  		await updateProfile(user, {
 		  			displayName: username,
 		  			photoURL: downloadURL
 		  		})
 		  		//storing user data in firebase
-		  		/**await setDoc(doc(db, "users", user.uid), {
+		  		await setDoc(doc(db, "users", user.uid), {
 		  			uid: user.uid,
 		  			displayName: username,
 		  			email,
 		  			photoURL: downloadURL
-		  		})**/
+		  		})
 		  	})
 		  })
 		  
@@ -76,7 +76,7 @@ const Signup = () => {
 		        <div>
 		          <p className="text-left font-semibold">Upload profile</p>
 		          <input type="file" className="border-2 border-gray-400 rounded-md w-full p-2 my-4 mt-2" onChange={e => setImageFile(e.target.files[0])} required/></div>
-		        <div><input type="Text" placeholder="Username" className="border-2 border-gray-400 rounded-md w-full p-2 my-4"  onChange={e => setUsername(e.target.value)} required/></div>
+		        <div><input type="Text" placeholder="Username" className="border-2 border-gray-400 rounded-md w-full p-2 my-4"  value={username} onChange={e => setUsername(e.target.value)} required/></div>
 		        <div><input type="Email" placeholder="email" className="border-2 border-gray-400 rounded-md w-full p-2 my-4"  onChange={e => setEmail(e.target.value)} required/></div>
 		        <div><input type="Password" placeholder="password" className="border-2 border-gray-400 rounded-md w-full p-2 my-4" onChange={e => setPassword(e.target.value)} required/></div>
 		        <button type="submit" className="border-0 outline-0 rounded-md w-full p-2 bg-subColor text-darkText font-semibold">{loading ? "Loading..." : "Create an Account"}</button>

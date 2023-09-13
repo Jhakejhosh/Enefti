@@ -3,9 +3,9 @@ import useAuth from "../hooks/useAuth"
 
 
 const ProtectedRoute = ({children}) => {
-	const {currentUser} = useAuth()
+	const {theUser} = useAuth()
 	const navigate = useNavigate()
 	
-	return currentUser ? children : navigate("/login")
+	return theUser ? children : navigate("/login")
 }
 export default ProtectedRoute

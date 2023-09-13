@@ -29,7 +29,7 @@ const Navbar = () => {
 		]
 	
 	const {themeMode, setThemeMode} = useGlobalContext();
-	const {currentUser} = useAuth()
+	const {theUser} = useAuth()
 	const [showNavMenu, setShowNavMenu] = useState(false)
 	const [loading, setLoading] = useState(false)
 	
@@ -62,9 +62,9 @@ const Navbar = () => {
 		    {/**profile picture**/}
 		    <div className="text-center">
 		      <div className="w-12 h-12 border-2 rounded-full flex justify-center items-center border-subColor overflow-hidden text-center" onClick={() => setShowNavMenu(!showNavMenu)}>
-		        <img src={currentUser ? currentUser.photoURL : profile} alt="profile" className="w-full" loading="lazy"/>
+		        <img src={theUser ? theUser?.photoURL : profile} alt="profile" className="w-full" loading="lazy"/>
 		      </div>
-		      <p className="font-bold text-[10px] dark:text-darkText text-center">{currentUser ? `Welcome ${currentUser.displayName}` : "Hi, guest"}</p>
+		      <p className="font-bold text-[10px] dark:text-darkText text-center">{theUser ? `Welcome ${theUser?.displayName}` : "Hi, guest"}</p>
 		    </div>
 		    
 		    {/**Navmenu logic**/}
@@ -79,7 +79,7 @@ const Navbar = () => {
 		      		  </li>
 		      		)
 		      })}
-		      <li className="mb-0">{currentUser ? (
+		      <li className="mb-0">{theUser ? (
 		      	 <span className="flex items-center text-sm" onClick={logOut}><AiOutlineLogout/><p className="ml-4">Logout</p></span> 
 		      	) : (
 		      	   <Link to="/login" className="flex items-center text-sm"><AiOutlineLogin/><p className="ml-4">Login</p></Link> 

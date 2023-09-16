@@ -54,7 +54,7 @@ const Signup = () => {
 		  })
 		  
 			
-			toast.success(`Account created ${user.displayName}`)
+			toast.success(`Account created by ${user.displayName}`)
 			navigate("/login")
 			setLoading(false)
 		} catch (e) {

@@ -1,6 +1,7 @@
 import {useState} from "react"
-import {auth} from "../Firebase/Firebase"
+import {auth, storage} from "../Firebase/Firebase"
 import {collection, addDoc} from "firebase/firestore"
+import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage"
 
 const CreateNftForm = () => {
 	
@@ -10,10 +11,35 @@ const CreateNftForm = () => {
 	const [category, setCategory] = useState("")
 	const [highBid, setHighBid] = useState("")
 	const [lowBid, setLowBid] = useState("")
+	const [loading, setLoading] = useState(false)
 	
 	const addNft = (e) => {
 		e.preventDefault()
-		window.alert(`category ${category}`)
+		setLoading(true)
+		
+		try {
+			const storageRef = ref(storage, `ProductImage ${Date.now() + name}`)
+		  const uploadImage = uploadBytesResumable(profileImgRef, nftImage)
+		  
+		  uploadImage.on((error) => {
+		  	taost.error(error.message)
+		  }, () => {
+		  	getDownloadURL(uploadImage.snapshot.ref).then(async (downloadURL) => {
+		  		//update username and profile image
+		  		const productDocs = collection(db, "products")
+		  		await addDoc(productDocs, {
+		  			name,
+		  			photoURL: downloadURL,
+		  			description,
+		  			category,
+		  			highBid,
+		  			lowBid
+		  		})
+		  	})
+		  })
+		} catch (e) {
+			console.log(e)
+		}
 	}
 	
 	return (

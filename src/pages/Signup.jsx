@@ -27,17 +27,18 @@ const Signup = () => {
 			//authentication of email and password
 			const userCredential = await createUserWithEmailAndPassword(auth, email, password)
 		  const user = userCredential.user
+		  
 		  //handling authentication of username and profile picture
 		  
 		  //referencing the profile image
 		  const profileImgRef = ref(storage, `Images/${Date.now()+username}`)
-		  const uploadImage = uploadBytesResumable(profileImgRef, imageFile)
+		  const uploadTask = uploadBytesResumable(profileImgRef, imageFile)
 		  
 		  //uploading image 
-		  uploadImage.on((error) => {
+		  uploadTask.on((error) => {
 		  	taost.error(error.message)
 		  }, () => {
-		  	getDownloadURL(uploadImage.snapshot.ref).then(async (downloadURL) => {
+		  	getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
 		  		//update username and profile image
 		  		await updateProfile(user, {
 		  			displayName: username,

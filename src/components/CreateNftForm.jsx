@@ -1,7 +1,9 @@
 import {useState} from "react"
-import {auth, storage} from "../Firebase/Firebase"
+import {auth, storage, db} from "../Firebase/Firebase"
 import {collection, addDoc} from "firebase/firestore"
 import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage"
+import {toast} from "react-toastify"
+import {useNavigate} from "react-router-dom"
 
 const CreateNftForm = () => {
 	
@@ -13,20 +15,22 @@ const CreateNftForm = () => {
 	const [lowBid, setLowBid] = useState("")
 	const [loading, setLoading] = useState(false)
 	
-	const addNft = (e) => {
+	const navigate = useNavigate()
+	
+	const addNft = async(e) => {
 		e.preventDefault()
 		setLoading(true)
 		
 		try {
+		 	const productDocs = await collection(db, "products")
 			const storageRef = ref(storage, `ProductImage ${Date.now() + name}`)
-		  const uploadImage = uploadBytesResumable(profileImgRef, nftImage)
+		  const uploadImage = uploadBytesResumable(storageRef, nftImage)
 		  
 		  uploadImage.on((error) => {
 		  	taost.error(error.message)
 		  }, () => {
 		  	getDownloadURL(uploadImage.snapshot.ref).then(async (downloadURL) => {
 		  		//update username and profile image
-		  		const productDocs = collection(db, "products")
 		  		await addDoc(productDocs, {
 		  			name,
 		  			photoURL: downloadURL,
@@ -37,8 +41,12 @@ const CreateNftForm = () => {
 		  		})
 		  	})
 		  })
+		  
+		  setLoading(false)
+		  toast.success(`${name} successfully created!`)
+		  navigate("/")
 		} catch (e) {
-			console.log(e)
+			toast.error(e.message)
 		}
 	}
 	
@@ -77,7 +85,7 @@ const CreateNftForm = () => {
 		           <input type="number" placeholder="0.123" className="p-4 bg-gray-100 dark:bg-gray-900 rounded-md outline-0 text-gray-900 dark:text-gray-100 w-[150px]" value={lowBid} onChange={e => setLowBid(e.target.value)} required/>
 		          </div>
 		        </div>
-		        <button type="submit" className="p-4 rounded-md text-sm font-bold bg-subColor text-darkText w-full">Create</button>
+		        <button type="submit" className="p-4 rounded-md text-sm font-bold bg-subColor text-darkText w-full">{loading ? "Loading..." : "Create"}</button>
 		    </form>
 		  </div>
 		)

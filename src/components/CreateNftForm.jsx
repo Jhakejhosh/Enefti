@@ -33,11 +33,11 @@ const CreateNftForm = () => {
 		  		//update username and profile image
 		  		await addDoc(productDocs, {
 		  			name,
-		  			photoURL: downloadURL,
+		  			image: downloadURL,
 		  			description,
 		  			category,
-		  			highBid,
-		  			lowBid
+		  			high_bid : highBid,
+		  			low_bid : lowBid
 		  		})
 		  	})
 		  })

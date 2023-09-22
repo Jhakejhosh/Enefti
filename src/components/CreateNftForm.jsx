@@ -36,9 +36,11 @@ const CreateNftForm = () => {
 		  			image: downloadURL,
 		  			description,
 		  			category,
-		  			high_bid : highBid,
-		  			low_bid : lowBid
+		  			highBid,
+		  			lowBid
 		  		})
+		  	}).catch((e) => {
+		  		toast.error(e.message)
 		  	})
 		  })
 		  

@@ -40,7 +40,7 @@ const Signup = () => {
 		  }, () => {
 		  	getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
 		  		//update username and profile image
-		  		await updateProfile(user, {
+		  		await updateProfile(user?, {
 		  			displayName: username,
 		  			photoURL: downloadURL
 		  		})

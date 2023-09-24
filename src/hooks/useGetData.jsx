@@ -14,7 +14,7 @@ const useGetData = () => {
 		}
 		
 		getData()
-	}, [collectionRef])
+	}, [collection])
 	
 	return {createdProduct}
 }

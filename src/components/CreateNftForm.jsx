@@ -39,8 +39,6 @@ const CreateNftForm = () => {
 		  			highBid,
 		  			lowBid
 		  		})
-		  	}).catch((e) => {
-		  		toast.error(e.message)
 		  	})
 		  })
 		  

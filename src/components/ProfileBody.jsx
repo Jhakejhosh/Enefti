@@ -1,5 +1,5 @@
 import banner from "../assets/images/space.jpg"
-import profile from "../assets/images/clientIMG02-768x768.jpg"
+import profile from "../assets/images/pngwing.com (6).png"
 import {NavLink, Outlet } from "react-router-dom"
 import {useGlobalContext} from "../context/Context"
 import useAuth from "../hooks/useAuth"
@@ -20,7 +20,7 @@ const ProfileBody = () => {
 		      <div className="w-full md:h-[50vh] absolute rounded-md bg-gradient-to-b from-transparent to-darkBg h-[200px] dark:hidden"></div>
 		      <img src={banner} alt="banner" loading="lazy" className="rounded-md w-full  object-cover md:h-[50vh] h-[200px]"/>
 		      <div className="absolute bottom-[-4rem] text-center w-[130px] h-[130px] border-4-darkText dark:border-4-darkBg left-24 md:left-32 rounded-full flex justify-center items-center overflow-hidden">
-		        <img src={theUser&&theUser.photoURL} alt="profile_img" loading="lazy" className="w-full bg-gray-900 object-cover rounded-full m-2"/>
+		        <img src={theUser&&theUser.photoURL || profile } alt="profile_img" loading="lazy" className="w-full bg-gray-900 object-cover rounded-full m-2"/>
 		      </div>
 		    </div>
 		    <div className="pt-16 text-center md:px-32">

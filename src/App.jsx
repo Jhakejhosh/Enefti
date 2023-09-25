@@ -11,6 +11,7 @@ const CreateNft = lazy(() => import("./pages/CreateNFT.jsx"));
 const Profile = lazy(() => import("./pages/Profile.jsx"));
 const FavoriteNFT = lazy(() => import("./pages/FavoriteNFT.jsx"));
 const CreatedNFT = lazy(() => import("./pages/CreatedNFT.jsx"));
+import Loader from "./components/Loader"
 import {useGlobalContext} from "./context/Context"
 import {ToastContainer} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <ToastContainer theme={!themeMode ? "light" : "dark"}/>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path="/" element={<Home/>} exact/>
         <Route path="/product/:id" element={<ProductDetails/>}/>

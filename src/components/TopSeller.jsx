@@ -42,7 +42,7 @@ const TopSeller = () => {
 		    		    <img src={image} alt={name} loading="lazy" className="w-[40px] rounded-full h-[40px] mr-2"/>
 		    		    <div className="text-sm">
 		    		      <p className="font-semibold">{name}</p>
-		    		      <p className="text-subColor font-semibold">{bid}</p>
+		    		      <p className="text-subColor font-semibold text-xs">{bid}</p>
 		    		    </div>
 		    		  </div>
 		    		)

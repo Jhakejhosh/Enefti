@@ -1,10 +1,10 @@
 import {Typewriter} from "react-simple-typewriter"
 import {Link} from "react-router-dom"
 import AliceCarousel from 'react-alice-carousel';
-import image1 from "../assets/images/pngwing.com (14).png"
-import image2 from "../assets/images/pngwing.com (11).png"
-import image3 from "../assets/images/pngwing.com (12).png"
-import image4 from "../assets/images/pngwing.com (10).png"
+import image1 from "../assets/images/Glasshouse.jpg"
+import image2 from "../assets/images/Cloud.jpg"
+import image3 from "../assets/images/Virtual.jpg"
+import image4 from "../assets/images/young-adults-enjoying-hip-hop-nightclub-generated-by-ai.jpg"
 
 
 const Banner = () => {
@@ -28,8 +28,8 @@ const Banner = () => {
 
 	
 	return (
-		  <div className="px-4 pt-28 dark:bg-darkBg md:flex justify-center items-center w-full md:px-32 md:pt-24">
-		    <div className="dark:text-darkText text-center md:w-[50%]">
+		  <div className="px-4 pt-28 pb-4 dark:bg-darkBg md:flex justify-between items-center w-full md:px-32 md:pt-24">
+		    <div className="dark:text-darkText text-center md:text-left md:mr-4 md:w-[50%]">
 		      <h1 className="text-[28px] font-bold font-[Poppins]">Get access to the free space that allows you to create and save</h1>
           <span className="text-subColor text-[28px] font-bold font-[Poppins]">
           <Typewriter
@@ -45,9 +45,9 @@ const Banner = () => {
 		      <p className="my-6 text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet. Vel dolor unde in dignissimos dolor et repellendus saepe qui laboriosam quia et doloribus repudiandae qui perspiciatis odit.</p>
 		      <button className="w-full py-3 bg-subColor rounded-md text-darkText font-bold text-sm"><Link to="/market">Explore Products</Link></button>
 		    </div>
-		    {/**<div className="py-4 md:w-[50%] md:bg-subColor"><AliceCarousel animationType="fadeout" items={imageFadeIn} responsive={responsive} mouseTracking infinite
+		    <div className="my-6 md:w-[50%] rounded-md"><AliceCarousel animationType="fadeout" items={imageFadeIn} responsive={responsive} mouseTracking infinite
 		      autoPlayInterval={5000} animationDuration={2000} autoPlay disableDotsControls disableButtonsControls/>
-		   </div>**/}
+		   </div>
 		  </div>
 		)
 }

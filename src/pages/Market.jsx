@@ -19,7 +19,7 @@ const Market = () => {
 		    <Navbar/>
 		    <MarketBanner/>
 		    <SearchAndFilter setShowOptions={setShowOptions} showOptions={showOptions} products={products} setProducts={setProducts}/>
-		    <Suspense fallback={<div>Loading...</div>}>
+		    <Suspense fallback={<div className="w-full flex justify-center items-center h-[50vh] dark:bg-darkBg dark:text-darkText">Product loading...</div>}>
 		      {products.length === 0 ? <p className="text-center py-4">NFT not found</p> : <AllNftProduct product={products}/>}
 		    </Suspense>
 		    <Footer/>
